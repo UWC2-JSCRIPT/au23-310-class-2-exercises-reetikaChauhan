@@ -78,6 +78,19 @@ const months = [
   'November',
   'December'
 ];
+let year = DueDate.getFullYear()
+let monthinNumber = DueDate.getMonth()
+let month = months[monthinNumber]
+let date = DueDate.getDate()
+console.log(year,month,date)
+monthinNumber = monthinNumber + 1
+if (monthinNumber < 9){
+var htmltagformat = `<time datetime = "${year}-0${monthinNumber}-${date}">${month} ${date}, ${year} </time> `
+}
+else{
+  var htmltagformat = `<time datetime = "${year}-${monthinNumber}-${date}">${month} ${date}, ${year} </time> `
+}
 
 
 // 10. log this value using console.log
+console.log(htmltagformat)
