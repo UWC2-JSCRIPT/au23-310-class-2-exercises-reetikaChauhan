@@ -6,19 +6,18 @@
 // - bestFriend (object with the same 3 properties as above)
 
 const reetikaChauhan = {
-  bestFriend :{
-      firstName : 'Punit',
-      lastName : 'Kainth',
-      'favorite food' : 'pizza'
-     },
  firstName : 'Reetika',
  lastName : 'Chauhan',
- 'favorite food' : 'Ramen'
- 
+ 'favorite food' : 'Ramen',
+ bestFriend :{
+  firstName : 'Punit',
+  lastName : 'Kainth',
+  'favorite food' : 'pizza'
+ }
 }
 
 // 2. console.log best friend's firstName and your favorite food
-console.log(reetikaChauhan.bestFriend['firstName'] + reetikaChauhan.bestFriend['lastName'], reetikaChauhan['favorite food'])
+console.log(reetikaChauhan.bestFriend['firstName'] + " " + reetikaChauhan.bestFriend['lastName'], reetikaChauhan['favorite food'])
 
 // 3. Create an array to represent this tic-tac-toe board
 // -O-
@@ -54,10 +53,12 @@ else{
 // 7. You are given an assignmentDate as a string in the format "month/day/year"
 // i.e. '1/21/2019' - but this could be any date.
 // Convert this string to a Date
-const assignmentDate = '1/21/2019';
-var DueDate = new Date(assignmentDate)
+const assignmentDate = '02/01/2019';
+let assignmentDateObject = new Date(assignmentDate)
+console.log('Assignement date string converted to date object:',assignmentDateObject)
 // 8. Create a new Date instance to represent the dueDate.  
 // This will be exactly 7 days after the assignment date.
+let DueDate = new Date(assignmentDate)
 DueDate.setDate(DueDate.getDate() + 7)
 console.log('The Due Date is : ' ,DueDate)
 
@@ -82,15 +83,10 @@ let year = DueDate.getFullYear()
 let monthinNumber = DueDate.getMonth()
 let month = months[monthinNumber]
 let date = DueDate.getDate()
-console.log(year,month,date)
-monthinNumber = monthinNumber + 1
-if (monthinNumber < 9){
-var htmltagformat = `<time datetime = "${year}-0${monthinNumber}-${date}">${month} ${date}, ${year} </time> `
-}
-else{
-  var htmltagformat = `<time datetime = "${year}-${monthinNumber}-${date}">${month} ${date}, ${year} </time> `
-}
-
-
+let dateString = date.toString()
+dateString = dateString.padStart(2,0)
+monthinNumber = (monthinNumber + 1).toString()
+monthinNumber = monthinNumber.padStart(2,0)
+let htmltagformat = `<time datetime = "${year}-${monthinNumber}-${dateString}">${month} ${dateString}, ${year} </time> `
 // 10. log this value using console.log
 console.log(htmltagformat)
