@@ -42,9 +42,9 @@ console.log(ticTak[2])
 // Hints:
 // - Use rubular to check a few emails: https://rubular.com/
 // - Use regexp test method https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test
-let email = 'foo@bar.baz'
+let myEmail = 'foo@bar.baz'
 const regexPattern = /^[A-Za-z0-9]+([._-]?[A-Za-z0-9]+)*@[A-Za-z0-9]+([.-][A-Za-z0-9]+)*\.[A-Za-z]{2,3}$/;
-if (regexPattern.test(email)){
+if (regexPattern.test(myEmail)){
   console.log('It is correct email format')
 }
 else{
